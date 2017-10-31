@@ -1,0 +1,23 @@
+<div class="card meetings cf">
+
+  <div class="textintro">
+    <h1>Rat Sightings</h1>
+    <ul>
+        <li ng-repeat="sightingDetails in sightingsList">
+          <h4><a href="#!/sightingsList" ng-click="showDetails = ! showDetails">
+            {{sightingDetails.$id}}
+          </a></h4>
+          <div class="sightingDetails" ng-show="showDetails">
+            <p>
+              Date: {{sightingDetails.createdDate}}</br>
+              Address: {{sightingDetails.address}}</br>
+              &emsp;{{sightingDetails.city}}, {{sightingDetails.state}} {{sightingDetails.zipCode}}</br>
+              Location Type: {{sightingDetails.locationType}}</br>
+              Latitude: {{sightingDetails.latitude}}</br>
+              Longitude: {{sightingDetails.longitude}}
+             </p>
+          </div>
+        </li>
+    </ul>
+  </div>
+</div>
