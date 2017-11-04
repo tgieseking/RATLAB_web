@@ -27,6 +27,14 @@ ratlab.config(['$routeProvider', function($routeProvider) {
           return Authentication.requireAuth();
         }
       }
+    }).when('/map', {
+      templateUrl: 'views/sightingsMap.html',
+      // controller: 'SightingsMapController',
+      resolve: {
+        currentAuth: function(Authentication) {
+          return Authentication.requireAuth();
+        }
+      }
     }).otherwise({
       redirectTo: '/login'
     })

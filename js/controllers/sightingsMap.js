@@ -1,0 +1,3 @@
+ratlab.controller('SightingsMapController', ['$scope'
+
+])
