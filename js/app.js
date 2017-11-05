@@ -29,7 +29,7 @@ ratlab.config(['$routeProvider', function($routeProvider) {
       }
     }).when('/map', {
       templateUrl: 'views/sightingsMap.html',
-      // controller: 'SightingsMapController',
+      controller: 'SightingsMapController',
       resolve: {
         currentAuth: function(Authentication) {
           return Authentication.requireAuth();
