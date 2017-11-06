@@ -9,5 +9,13 @@ ratlab.factory('DatabaseService',
       // sightings: ['a', 'b', 'c']
     };
 
+    $rootScope.$on('logout', function () {
+      databaseObject.sightings.$destroy();
+    });
+
+    $rootScope.$on('login', function () {
+      databaseObject.sightings = $firebaseArray(ref.child('sightings'));
+    });
+
     return databaseObject;
   }]);

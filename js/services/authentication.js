@@ -20,12 +20,14 @@ ratlab.factory('Authentication',
         auth.$signInWithEmailAndPassword(user.email, user.password
         ).then(function(user) {
           $location.path('/sightingsList');
+          $rootScope.$broadcast('login');
         }).catch(function(error) {
           $rootScope.message = error.message;
         });
       },
 
       logout: function() {
+        $rootScope.$broadcast('logout');
         auth.$signOut();
       },
 
