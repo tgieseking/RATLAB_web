@@ -461,6 +461,9 @@ nav {
   color: none;
 }
 
+.branding div {
+  height: 10vh;
+}
 
 nav ul {
   width: 60%;
@@ -633,6 +636,14 @@ input.ng-valid.ng-touched {
   padding-bottom: 10px;
 }
 
-.mapClass {
-  height: 100%;
+#map {
+  height: 716px;
+}
+
+main {
+  min-height: 100%;
+    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+    height: 100%;
+    margin: 0 auto -100px; /*Allow for footer height*/
+    vertical-align:bottom;
 }
