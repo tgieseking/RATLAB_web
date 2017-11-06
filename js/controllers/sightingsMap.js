@@ -8,7 +8,6 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService',
       });
       var sightingsList = DatabaseService.sightings;
       sightingsList.$loaded().then(function(){
-        console.log(sightingsList.length);
         for (i = 0; i < sightingsList.length; i++) {
           var marker = new google.maps.Marker({
             position: {

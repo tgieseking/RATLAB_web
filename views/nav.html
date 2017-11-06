@@ -1,7 +1,10 @@
 <div class="branding"><a ng-href="#!/">RATLAB</a></div>
+<div  ng-controller="RegistrationController">
 <ul>
   <li><a ng-href="#!/login" ng-hide="currentUser">Login</a></li>
   <li><a ng-href="#!/register" ng-hide="currentUser">Register</a></li>
-  <li><a ng-href="#!/sightingsList" ng-hide="!currentUser">Sightings</a></li>
+  <li><a ng-href="#!/login" ng-hide="!currentUser" ng-click="logout()">Logout</a></li>
   <li><a ng-href="#!/map" ng-hide="!currentUser">Map</a></li>
+  <li><a ng-href="#!/sightingsList" ng-hide="!currentUser">Sightings</a></li>
 </ul>
+</div>
