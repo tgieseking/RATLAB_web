@@ -9,12 +9,23 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService',
       var sightingsList = DatabaseService.sightings;
       sightingsList.$loaded().then(function(){
         for (i = 0; i < sightingsList.length; i++) {
+          var sighting = sightingsList[i];
           var marker = new google.maps.Marker({
             position: {
-              lat: sightingsList[i].latitude,
-              lng: sightingsList[i].longitude
+              lat: sighting.latitude,
+              lng: sighting.longitude
             },
             map: map
+          });
+          var infoContent = '<h3>' + sighting.$id + '</h3>'
+                            + '<p>' + sighting.address + '<br>'
+                            + sighting.city + ', ' + sighting.state + ' '
+                            + sighting.zipCode + '</p>';
+          marker.infoWindow = new google.maps.InfoWindow({
+            content: infoContent
+          });
+          marker.addListener('click', function() {
+            this.infoWindow.open(map, this);
           });
         }
       });
