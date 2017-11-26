@@ -1,5 +1,15 @@
 <section class="sightingMap">
   <form name="mapForm">
-    <div id="map"data-ng-init="initMap()"></div>
+    <div id="mapWrapper">
+      <div id = "overMap">
+        <div id = "overMapTabs">
+          <button class="tablinks" ng-click="openTab('report')">Report</button>
+          <button class="tablinks" ng-click="openTab('filter')">Filter</button>
+        </div>
+        <h1>Submit Sighting</h1>
+        <input type="text" name="name" placeholder="Address" ng-required="true">
+      </div>
+      <div id="map"data-ng-init="initMap()"></div>
+    </div>
   </form>
 </section>
