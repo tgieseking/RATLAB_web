@@ -3,11 +3,15 @@
     <div id="mapWrapper">
       <div id = "overMap">
         <div id = "overMapTabs">
-          <button class="tablinks" ng-click="openTab('report')">Report</button>
-          <button class="tablinks" ng-click="openTab('filter')">Filter</button>
+          <button class="tablinks" ng-click="currentTab = 0">Report</button>
+          <button class="tablinks" ng-click="currentTab = 1">Filter</button>
         </div>
-        <h1>Submit Sighting</h1>
-        <input type="text" name="name" placeholder="Address" ng-required="true">
+        <div id = "reportTab" ng-show="currentTab == 0">
+          <h1>Submit Sighting</h1>
+        </div>
+        <div id = "filterTab" ng-show="currentTab == 1">
+          <h1>Filter Sightings</h1>
+        </div>
       </div>
       <div id="map"data-ng-init="initMap()"></div>
     </div>
