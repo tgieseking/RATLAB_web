@@ -662,6 +662,8 @@ input.ng-valid.ng-touched {
   padding-left: 10px;
 }
 
+
+
 main {
   min-height: 100%;
     height: auto !important; /*Cause footer to stick to bottom in IE 6*/

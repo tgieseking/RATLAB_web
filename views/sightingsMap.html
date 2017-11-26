@@ -10,7 +10,36 @@
           <h1>Submit Sighting</h1>
         </div>
         <div id = "filterTab" ng-show="currentTab == 1">
-          <h1>Filter Sightings</h1>
+          <h2>Filter Sightings</h2>
+
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate">
+
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate">
+
+
+          <label>Boroughs</label>
+          <input type="checkbox" id="brooklyn">
+          <label for="brooklyn">Brooklyn</label>
+
+          <input type="checkbox" id="bronx">
+          <label for="bronx">Bronx</label>
+
+          <input type="checkbox" id="manhattan">
+          <label for="manhattan">Manhattan</label>
+
+          <input type="checkbox" id="staten_island">
+          <label for="staten_island">Staten Island</label>
+
+          <input type="checkbox" id="queens">
+          <label for="queens">Queens</label>
+
+          <input type="checkbox" id="unknown">
+          <label for="unknown">Unknown</label>
+
+
+          <input type="button" value="Filter">
         </div>
       </div>
       <div id="map"data-ng-init="initMap()"></div>
