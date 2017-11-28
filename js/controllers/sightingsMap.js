@@ -2,7 +2,7 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService', '$comp
   function($scope, DatabaseService, $compile) {
     var map;
     $scope.currentTab = 0;
-    
+
     $scope.initMap =  function() {
       map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 40.730610, lng: -73.935242},
@@ -32,6 +32,10 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService', '$comp
           });
         }
       });
+    }
+
+    $scope.submitSighting = function() {
+      DatabaseService.sightings.$add($scope.newSighting);
     }
   }
 ])
