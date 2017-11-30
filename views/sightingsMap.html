@@ -26,7 +26,7 @@
             ng-model="newSighting.zipCode">
 
           <label for="borough">Borough</label>
-          <select id="borough" ng-required="currentTab == 0" 
+          <select id="borough" ng-required="currentTab == 0"
             ng-model="newSighting.borough">
             <option value="BROOKLYN">Brooklyn</option>
             <option value="BRONX">Bronx</option>
@@ -44,7 +44,8 @@
           <input type="number" id="longitude" ng-required="currentTab == 0"
             min="-180" max="180" ng-model="newSighting.longitude">
 
-          <input type="button" value="Submit" ng-click="submitSighting()">
+          <input type="button" value="Submit" ng-click="submitSighting()"
+            ng-disabled="mapform.$invalid">
         </div>
         <div id = "filterTab" ng-show="currentTab == 1">
           <h2>Filter Sightings</h2>
@@ -57,26 +58,26 @@
 
 
           <label>Boroughs</label>
-          <input type="checkbox" id="brooklyn">
+          <input type="checkbox" id="brooklyn" ng-model="filter.brooklyn" ng-init="filter.brooklyn=true">
           <label for="brooklyn">Brooklyn</label>
 
-          <input type="checkbox" id="bronx">
+          <input type="checkbox" id="bronx" ng-model="filter.bronx" ng-init="filter.bronx=true">
           <label for="bronx">Bronx</label>
 
-          <input type="checkbox" id="manhattan">
+          <input type="checkbox" id="manhattan" ng-model="filter.manhattan" ng-init="filter.manhattan=true">
           <label for="manhattan">Manhattan</label>
 
-          <input type="checkbox" id="staten_island">
+          <input type="checkbox" id="staten_island" ng-model="filter.staten_island" ng-init="filter.staten_island=true">
           <label for="staten_island">Staten Island</label>
 
-          <input type="checkbox" id="queens">
+          <input type="checkbox" id="queens" ng-model="filter.queens" ng-init="filter.queens=true">
           <label for="queens">Queens</label>
 
-          <input type="checkbox" id="unknown">
+          <input type="checkbox" id="unknown" ng-model="filter.unknown" ng-init="filter.unknown=true">
           <label for="unknown">Unknown</label>
 
 
-          <input type="button" value="Filter">
+          <input type="button" value="Filter" ng-click="filterSightings()">
         </div>
       </div>
       <div id="map"data-ng-init="initMap()"></div>
