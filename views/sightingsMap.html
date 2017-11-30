@@ -51,10 +51,10 @@
           <h2>Filter Sightings</h2>
 
           <label for="startDate">Start Date</label>
-          <input type="date" id="startDate" ng-required="currentTab == 1">
+          <input type="date" id="startDate" ng-required="currentTab == 1" ng-model="filter.startDate">
 
           <label for="endDate">End Date</label>
-          <input type="date" id="endDate" ng-required="currentTab == 1">
+          <input type="date" id="endDate" ng-required="currentTab == 1" ng-model="filter.endDate">
 
 
           <label>Boroughs</label>

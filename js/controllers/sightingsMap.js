@@ -30,12 +30,15 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService', '$comp
       sightingsList.$loaded().then(function(){
         for (i = 0; i < sightingsList.length; i++) {
           var sighting = sightingsList[i];
-          if (sighting.borough == "BROOKLYN" && $scope.filter.brooklyn ||
+          var sightingDate = new Date(sighting.createdDate);
+          if ((sighting.borough == "BROOKLYN" && $scope.filter.brooklyn ||
               sighting.borough == "BRONX" && $scope.filter.bronx ||
               sighting.borough == "MANHATTAN" && $scope.filter.manhattan ||
               sighting.borough == "STATEN_ISLAND" && $scope.filter.staten_island ||
               sighting.borough == "QUEENS" && $scope.filter.queens ||
-              sighting.borough == "UNKNOWN" && $scope.filter.unknown) {
+              sighting.borough == "UNKNOWN" && $scope.filter.unknown) &&
+              ($scope.filter.startDate == undefined || $scope.filter.startDate <= sightingDate) &&
+              ($scope.filter.endDate == undefined || $scope.filter.endDate >= sightingDate)) {
                 var marker = new google.maps.Marker({
                   position: {
                     lat: sighting.latitude,
