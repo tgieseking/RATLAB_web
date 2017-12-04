@@ -662,7 +662,13 @@ input.ng-valid.ng-touched {
   padding-left: 10px;
 }
 
-
+.sightingListEntry {
+  background-color: #fff;
+  padding: 5px;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 10px;
+}
 
 main {
   min-height: 100%;

@@ -4,18 +4,21 @@
     <h1>Rat Sightings</h1>
     <ul>
         <li ng-repeat="sightingDetails in sightingsList">
-          <h4><a href="#!/sightingsList" ng-click="showDetails = ! showDetails">
-            {{sightingDetails.$id}}
-          </a></h4>
-          <div class="sightingDetails" ng-show="showDetails">
-            <p>
-              Date: {{sightingDetails.createdDate}}</br>
-              Address: {{sightingDetails.address}}</br>
-              &emsp;{{sightingDetails.city}}, {{sightingDetails.state}} {{sightingDetails.zipCode}}</br>
-              Location Type: {{sightingDetails.locationType}}</br>
-              Latitude: {{sightingDetails.latitude}}</br>
-              Longitude: {{sightingDetails.longitude}}
-             </p>
+          <div class="sightingListEntry">
+            <h4><a href="#!/sightingsList" ng-click="showDetails = ! showDetails">
+              {{sightingDetails.$id}}
+            </a></h4>
+            <div class="sightingDetails" ng-show="showDetails">
+              <p>
+                Address: {{sightingDetails.address}}</br>
+                &emsp;&emsp;&emsp;&emsp; {{sightingDetails.city}}, {{sightingDetails.state}} {{sightingDetails.zipCode}}</br>
+                Borough: {{sightingDetails.borough}}</br>
+                Time Reported: {{sightingDetails.createdDate}}</br>
+                Location Type: {{sightingDetails.locationType}}</br>
+                Latitude: {{sightingDetails.latitude}}</br>
+                Longitude: {{sightingDetails.longitude}}
+               </p>
+            </div>
           </div>
         </li>
     </ul>
