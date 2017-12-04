@@ -57,24 +57,31 @@
           <input type="date" id="endDate" ng-required="currentTab == 1" ng-model="filter.endDate">
 
 
-          <label>Boroughs</label>
-          <input type="checkbox" id="brooklyn" ng-model="filter.brooklyn" ng-init="filter.brooklyn=true">
-          <label for="brooklyn">Brooklyn</label>
+          <h3 id="boroughsLabel">Boroughs</h4>
 
-          <input type="checkbox" id="bronx" ng-model="filter.bronx" ng-init="filter.bronx=true">
-          <label for="bronx">Bronx</label>
+          <label for="brooklyn">Brooklyn
+          <input type="checkbox" class="boroughBox" id="brooklyn" ng-model="filter.brooklyn" ng-init="filter.brooklyn=true" style="display:inline;">
+          </label>
 
-          <input type="checkbox" id="manhattan" ng-model="filter.manhattan" ng-init="filter.manhattan=true">
-          <label for="manhattan">Manhattan</label>
+          <label for="bronx">Bronx
+            <input type="checkbox" class="boroughBox" id="bronx" ng-model="filter.bronx" ng-init="filter.bronx=true">
+          </label>
 
-          <input type="checkbox" id="staten_island" ng-model="filter.staten_island" ng-init="filter.staten_island=true">
-          <label for="staten_island">Staten Island</label>
+          <label for="manhattan">Manhattan
+            <input type="checkbox" class="boroughBox" id="manhattan" ng-model="filter.manhattan" ng-init="filter.manhattan=true">
+          </label>
 
-          <input type="checkbox" id="queens" ng-model="filter.queens" ng-init="filter.queens=true">
-          <label for="queens">Queens</label>
+          <label for="staten_island">Staten Island
+            <input type="checkbox" class="boroughBox" id="staten_island" ng-model="filter.staten_island" ng-init="filter.staten_island=true">
+          </label>
 
-          <input type="checkbox" id="unknown" ng-model="filter.unknown" ng-init="filter.unknown=true">
-          <label for="unknown">Unknown</label>
+          <label for="queens">Queens
+            <input type="checkbox" class="boroughBox" id="queens" ng-model="filter.queens" ng-init="filter.queens=true">
+          </label>
+
+          <label for="unknown">Unknown
+            <input type="checkbox" class="boroughBox" id="unknown" ng-model="filter.unknown" ng-init="filter.unknown=true">
+          </label>
 
 
           <input type="button" value="Filter" ng-click="filterSightings()">
