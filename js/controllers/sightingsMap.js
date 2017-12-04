@@ -56,7 +56,8 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService', '$comp
                 var infoContent = '<h3>' + sighting.$id + '</h3>'
                                   + '<p>' + sighting.address + '<br>'
                                   + sighting.city + ', ' + sighting.state + ' '
-                                  + sighting.zipCode + '</p>';
+                                  + sighting.zipCode + '<br>'
+                                  + sighting.borough + '</p>';
                 marker.infoWindow = new google.maps.InfoWindow({
                   content: infoContent
                 });
