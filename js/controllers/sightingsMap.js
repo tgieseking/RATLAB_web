@@ -15,6 +15,13 @@ ratlab.controller('SightingsMapController', ['$scope', 'DatabaseService', '$comp
     $scope.submitSighting = function() {
       DatabaseService.sightings.$add($scope.newSighting);
       console.log("Submitted sighting")
+      $scope.newSighting.address = '';
+      $scope.newSighting.city = '';
+      $scope.newSighting.state = '';
+      $scope.newSighting.zipCode = '';
+      $scope.newSighting.borough = 'UNKNOWN';
+      $scope.newSighting.latitude = 0;
+      $scope.newSighting.longitude = 0;
     }
 
     $scope.clearSightings = function() {
